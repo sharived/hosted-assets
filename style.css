@@ -6,67 +6,69 @@
 :root {
   --main-white: #ffffff;
   --off-white: #f4f4f4;
-  --main-red: #be3144;
-  --main-blue: #45567d;
   --main-gray: #303841;
-  --main-green: #4caf50;
   --main-teal: #008081;
-  --main-gold: #a88430;
   --main-juicebox: #f4b54c;
+  --header-height: 75px;
+  --menu-width: 160px;
+  --menu-logo-width: 35px;
+  --menu-logo-thickness: 5px;
+  --menu-font-size: 18px;
+  --title-font-size: 40px;
+  --subtitle-font-size: 30px;
+  --main-text-size: 22px;
+  --project-width: 500px;
+  --project-height: 300px;
+  --profile-width: 300px;
+  --profile-height: 300px;
+  --profile-margin: 25px;
   font-family: myFirstFont, sans-serif;
   background: var(--off-white);
   color: black;
 }
 /* Test code */
-/*
+
 @media only screen and (min-width: 991px) {
   :root {
-  background: green;
+    background: green;
   }
 }
 
 @media only screen and (max-width: 991px) {
   :root {
-  background: yellow;
-  }
-  @media (orientation: portrait) {
-    :root {
-      font-size: 30px;
-     }
+    background: yellow;
   }
 }
 
 @media only screen and (max-width: 767px) {
   :root {
-background: teal;
+    background: teal;
   }
 }
 
 @media only screen and (max-width: 479px) {
   :root {
-background: pink;
+    background: pink;
   }
 }
 
-@media only screen and (min-resolution: 2dppx) {
+@media only screen and (max-device-width: 450px) {
   :root {
     background: blue;
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 3) 
-        and (orientation: portrait){
+/*
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  :root {
+    background: grey;
+  }
+}*/
+@media only screen and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
   :root {
     background: orange;
   }
 }
-*/
-@media only screen and (max-width: 991px) {
-  @media (orientation: portrait) {
-    :root {
-      font-size: 30px;
-    }
-  }
-}
+
 
 .nav {
   position: relative;
@@ -77,7 +79,7 @@ background: pink;
   display: none;
   position: absolute;
   background-color: black;
-  min-width: 160px;
+  min-width: var(--menu-width); /* resized with @media */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -88,7 +90,7 @@ background: pink;
 }
 /* Change color of dropdown links on hover */
 #left-nav li:hover {
-  background-color: #00f1f1;
+  background-color: #3f3f3f;
 }
 
 /* Show the dropdown menu on hover */
@@ -100,48 +102,128 @@ background: pink;
 .nav:hover .dropbtn {
   background-color: black;
 }
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: var(--menu-font-size);
+}
+
+.menu-logo-line {
+  width: var(--menu-logo-width);
+  height: var(--menu-logo-thickness);
+  background-color: black;
+  margin: 6px 0;
+}
 
 header {
   display: flex;
   position: fixed;
   width: 100%;
-  height: 75px;
+  height: var(--header-height); /* resized with @media */
   background: var(--main-white);
   top: 0;
   left: 0;
   z-index: 10;
 }
 .page {
-  padding-top: 75px;
+  padding-top: var(--header-height); /* resized with @media */
   padding-bottom: 50px;
 }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+.page-title {
+  color: black;
+  font-size: var(--title-font-size);
+  text-align: center;
+}
+.page-subtitle {
+  color: black;
+  font-size: var(--subtitle-font-size);
+  text-align: center;
+}
+.button {
+  background-color: var(--main-juicebox);
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: var(--menu-font-size);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+.main-text {
+  font-size: var(--main-text-size);
+  margin: 40px;
+}
+.project-image {
+  width: var(--project-width);
+  height: var(--project-height);
+  object-fit: cover;
+}
+.profile-pic {
+  width: var(--profile-width);
+  height: var(--profile-height);
+  object-fit: cover;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  color: var(--main-teal);
+  width: var(--profile-width);
+  height: var(--profile-height);
+  margin: var(--profile-margin);
+}
+/*@media only screen and (-webkit-min-device-pixel-ratio: 3) and */
+@media only screen and (max-device-width: 450px) and (orientation: portrait) {
+  #left-nav {
+    min-width: calc(var(--menu-width) * 2);
+  }
+  .nav-link {
+    font-size: calc(var(--menu-font-size) * 2);
+  }
+  .menu-logo-line {
+    width: calc(var(--menu-logo-width) * 2);
+    height: calc(var(--menu-logo-thickness) * 2);
+  }
   header {
-    height: 150px;
+    height: calc(var(--header-height) * 2);
   }
   .page {
-    padding-top: 150px;
+    padding-top: calc(var(--header-height) * 2);
+  }
+  .page-title {
+    font-size: calc(var(--title-font-size) * 2);
+  }
+  .page-subtitle {
+    font-size: calc(var(--subtitle-font-size) * 2);
+  }
+  .button {
+    font-size: calc(var(--menu-font-size) * 2);
+  }
+  .main-text {
+    font-size: calc(var(--main-text-size) * 2);
+  }
+  .project-image {
+    width: calc(var(--project-width) * 2);
+    height: calc(var(--project-height) * 2);
+  }
+  .profile-pic {
+    width: calc(var(--profile-width) * 2);
+    height: calc(var(--profile-height) * 2);
+  }
+  .profile {
+    width: calc(var(--profile-width) * 2);
+    height: calc(var(--profile-height) * 2);
+    margin: calc(var(--profile-margin)*2);
   }
 }
 
-.menu-line {
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
-}
 #ForGood-logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 100%;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
 }
 
 .social-link {
@@ -168,15 +250,6 @@ header {
   flex-direction: row;
 }
 
-.page-title {
-  color: black;
-  font-size: 40px;
-}
-.page-subtitle {
-  color: black;
-  font-size: 30px;
-}
-
 #mission {
   display: flex;
   flex-direction: column;
@@ -192,18 +265,7 @@ header {
 #intro a {
   color: black;
 }
-.button {
-  background-color: var(--main-juicebox);
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 18px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 20px;
-}
+
 .button a {
   color: black;
   text-decoration: none;
@@ -244,22 +306,11 @@ header {
   margin: 25px;
 }
 
-.project-image {
-  width: calc(500px - 7.2rem);
-  height: 300px;
-  object-fit: cover;
-}
-
 .profiles {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.profile-pic {
-  height: calc(300px - 6.8rem);
-  width: 300px;
-  object-fit: cover;
 }
 
 #multi-sigs {
@@ -270,15 +321,6 @@ header {
   flex-direction: column;
 }
 
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  color: var(--main-teal);
-  width: 300px;
-  margin: 25px;
-}
 .linkedin-logo {
   align-self: flex-end;
 }
