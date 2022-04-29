@@ -6,18 +6,20 @@
   --main-gray: #303841;
   --main-green: #4caf50;
   --main-teal: #008081;
-  --main-gold: #A88430;
-  --main-juicebox: #F4B54C;
+  --main-gold: #a88430;
+  --main-juicebox: #f4b54c;
+  font-family: sans-serif;
 }
 header {
   display: flex;
   position: fixed;
   width: 100%;
-  height: auto;
+  height: 75px;
   background: black;
   top: 0;
   left: 0;
 }
+
 #ForGood-logo {
   display: block;
   margin-left: auto;
@@ -28,17 +30,18 @@ header {
 .nav-link {
   text-decoration: none;
   color: white;
-  font-size: 25px;
+  font-size: 18px;
 }
 #left-nav {
   display: flex;
   top: 0;
   left: 0;
   position: fixed;
-  flex-direction: column;
+  flex-direction: row;
 }
 #left-nav li {
   margin: 10px 0;
+  list-style: none;
 }
 
 .social-link {
@@ -47,7 +50,9 @@ header {
 .social-logo {
   width: 40px;
   height: 40px;
+  border-radius: 10px;
 }
+
 .social-logo-inline {
   width: 40px;
   height: 40px;
@@ -59,39 +64,60 @@ header {
   top: 0;
   right: 0;
   position: fixed;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .page {
-  padding-top: 200px;
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+@keyframes slideInRight {
+  0% {
+    transform: translate(100%, 0);
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translate(-100%, 0);
+    100% {
+      transform: translate(0, 0);
+    }
+  }
 }
 
-body {
-  background: var(--main-teal);
-  padding-top: 200px;
+.page-title {
+  color: white;
+  font-size: 40px;
+  /*animation-name: slideInRight;*/
+  animation-duration: 4s;
+}
+.page-subtitle {
+  color: white;
+  font-size: 30px;
+  /*animation-name: slideInLeft;*/
+  animation-duration: 4s;
+}
+
+#mission {
+  background-image: url("https://sharived.github.io/hosted-assets/SkyBackground.jpg");
+  background-color: var(--main-teal);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  height: 100vh;
   width: 100%;
-}
-#questions {
-  color: white;
-  font-size: 25px;
-  text-align: center;
-}
-#questions li {
-  list-style-type: none;
+  color: black;
 }
 
 #intro {
   padding: 30px;
-  color: white;
 }
 #intro a {
-  color: white;
+  color: black;
 }
-
 .button {
   background-color: var(--main-juicebox);
   border: none;
@@ -103,41 +129,29 @@ body {
   font-size: 18px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 20px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  font-weight: 100;
 }
 .button a {
-  color: black;  
+  color: black;
   text-decoration: none;
 }
 
 #projects {
+  background-image: url("https://sharived.github.io/hosted-assets/LeavesBackground.jpg");
+  background-color: var(--main-teal);
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
+  height: auto;
+  width: 100%;
 }
 #nomination {
   background: var(--main-juicebox);
   color: black;
-  width: 800px;
+  width: 850px;
   border-radius: 5px;
-  padding: 20px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  font-weight: 100;
-  border: 10px;
+  padding-left: 20px;
   border-color: black;
-}
-/* "Automagic" image grid using no media queries */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 4rem;
-  width: 100%;
-  max-width: 1280px;
-  padding-top: 20px;
-  margin: 0 auto;
-  margin-bottom: 6rem;
 }
 
 @media (max-width: 30.625em) {
@@ -149,34 +163,53 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
+.project-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .project {
-  background: var(--main-gray);
+  background: var(--main-teal);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   text-align: center;
+  margin: 25px;
 }
 
 .project-image {
-  width: calc(500px - 6.8rem);
-  height: auto;
+  width: calc(500px - 7.2rem);
+  height: 300px;
   object-fit: cover;
 }
 
+.profiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .profile-pic {
   height: calc(300px - 6.8rem);
-  width: auto;
+  width: 300px;
   object-fit: cover;
 }
 
 #multi-sigs {
+  background-color: var(--main-teal);
   text-align: center;
   color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 .profile {
   display: flex;
   flex-direction: column;
-  background: grey;
+  align-items: center;
+  background: white;
+  color: var(--main-teal);
+  width: 300px;
+  margin: 25px;
 }
 .linkedin-logo {
   align-self: flex-end;
