@@ -1,3 +1,4 @@
+ @import “common.css”;
 /* Custom properties/variables  */
 @font-face {
   font-family: myFirstFont;
@@ -193,7 +194,6 @@ video {
   text-align: center;
   margin: 25px;
 }
-/* END COMMON */
 
 .menu-nav {
   position: relative;
