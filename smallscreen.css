@@ -1,4 +1,199 @@
- @import “common.css”;
+/* Custom properties/variables  */
+@font-face {
+  font-family: myFirstFont;
+  src: url(https://sharived.github.io/hosted-assets/Fonts/towards/Towards.ttf);
+}
+
+:root {
+  --main-white: #ffffff;
+  --off-white: #f4f4f4;
+  --main-gray: #303841;
+  --main-teal: #008081;
+  --main-juicebox: #f4b54c;
+  --header-height: 75px;
+  --menu-width: 160px;
+  --menu-logo-width: 35px;
+  --menu-logo-thickness: 5px;
+  --menu-font-size: 18px;
+  --title-font-size: 40px;
+  --subtitle-font-size: 30px;
+  --main-text-size: 22px;
+  --project-width: 500px;
+  --project-height: 300px;
+  --profile-width: 300px;
+  --profile-height: 300px;
+  --profile-margin: 25px;
+  font-family: myFirstFont, sans-serif;
+  background: var(--off-white);
+  color: black;
+}
+
+/* Test code */
+/*
+@media only screen and (min-width: 991px) {
+  :root {
+    background: green;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  :root {
+    background: yellow;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    background: teal;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  :root {
+    background: pink;
+  }
+}
+
+@media only screen and (max-device-width: 450px) {
+  :root {
+    background: blue;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  :root {
+    background: grey;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  :root {
+    background: orange;
+  }
+}
+*/
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: var(--header-height); /* resized with @media */
+  background: var(--main-white);
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#ForGood-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page {
+  padding-top: var(--header-height); /* resized with @media */
+  padding-bottom: 50px;
+}
+.page-title {
+  color: black;
+  font-size: var(--title-font-size);
+  text-align: center;
+}
+.page-subtitle {
+  color: black;
+  font-size: var(--subtitle-font-size);
+  text-align: center;
+}
+#mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  color: black;
+}
+
+#intro {
+  padding: 30px;
+}
+#intro a {
+  color: black;
+}
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  height: auto;
+  width: 100%;
+}
+#nomination {
+  background: var(--main-juicebox);
+  color: black;
+  width: 850px;
+  border-radius: 5px;
+  padding-left: 20px;
+  border-color: black;
+}
+#nomination-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+video {
+  margin: 20px;
+}
+
+.button a {
+  color: black;
+  text-decoration: none;
+}
+.button {
+  background-color: var(--main-juicebox);
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: var(--menu-font-size);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+.main-text {
+  font-size: var(--main-text-size);
+  margin: 40px;
+}
+#multi-sigs {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.linkedin-logo {
+  align-self: flex-end;
+}
+.profile-pic {
+  width: var(--profile-width);
+  height: var(--profile-height);
+  object-fit: cover;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  color: var(--main-teal);
+  width: var(--profile-width);
+  /* TODO: messes up linked in 
+  height: var(--profile-height); */
+  margin: var(--profile-margin);
+}
+.project {
+  background: var(--main-teal);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  text-align: center;
+  margin: 25px;
+}
+/* END COMMON */
 
 .menu-nav {
   position: relative;
