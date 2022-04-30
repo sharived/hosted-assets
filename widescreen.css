@@ -1,0 +1,83 @@
+ @import url(“common.css”);
+
+#menu {
+  display: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: var(--menu-font-size);
+  padding-right: 15px;
+}
+#left-nav {
+  display: flex;
+  top: 0;
+  left: 0;
+  position: fixed;
+  flex-direction: row;
+}
+#left-nav li {
+  margin: 10px 0;
+  list-style: none;
+}
+
+.social-link {
+  padding: 10px;
+}
+.social-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.social-logo-inline {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+/* Social nav only visibile on desktop */
+#right-nav {
+  display: flex;
+  top: 0;
+  right: 0;
+  position: fixed;
+  flex-direction: row;
+}
+
+@media (max-width: 850px) {
+  #nomination {
+    width: ;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* On desktop display the projects horizontally */
+.project-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* TODO not sure why vars not working */
+.project-image {
+  width: calc(500px - 7.2rem);
+  height: 300px;
+  object-fit: cover;
+}
+/*
+.project-image {
+  width: calc(var(--project-width)-7.2rem);
+  height: var(--project-height);
+  object-fit: cover;
+}
+*/
+/* On desktop display the profiles horizontally */
+.profiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

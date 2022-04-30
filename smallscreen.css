@@ -1,0 +1,135 @@
+ @import “common.css”;
+
+.menu-nav {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: var(--menu-font-size);
+}
+
+/* Dropdown Content (Hidden by Default) */
+#left-nav {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: var(--menu-width); /* resized with @media */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+#left-nav li {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+#left-nav li:hover {
+  background-color: #3f3f3f;
+}
+
+/* Show the dropdown menu on hover */
+.menu-nav:hover #left-nav {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.menu-nav:hover .dropbtn {
+  background-color: black;
+}
+
+.menu-logo-line {
+  width: var(--menu-logo-width);
+  height: var(--menu-logo-thickness);
+  background-color: black;
+  margin: 6px 0;
+}
+
+.project-image {
+  width: var(--project-width);
+  height: var(--project-height);
+  object-fit: cover;
+}
+
+/* Portrait Mobile Devices */
+/*@media only screen and (-webkit-min-device-pixel-ratio: 3) and */
+@media only screen and (max-device-width: 450px) and (orientation: portrait) {
+  #left-nav {
+    min-width: calc(var(--menu-width) * 2);
+  }
+  .nav-link {
+    font-size: calc(var(--menu-font-size) * 2);
+  }
+  .menu-logo-line {
+    width: calc(var(--menu-logo-width) * 2);
+    height: calc(var(--menu-logo-thickness) * 2);
+  }
+  header {
+    height: calc(var(--header-height) * 2);
+  }
+  .page {
+    padding-top: calc(var(--header-height) * 2);
+  }
+  .page-title {
+    font-size: calc(var(--title-font-size) * 2);
+  }
+  .page-subtitle {
+    font-size: calc(var(--subtitle-font-size) * 2);
+  }
+  .button {
+    font-size: calc(var(--menu-font-size) * 2);
+  }
+  .main-text {
+    font-size: calc(var(--main-text-size) * 2);
+  }
+  .project-image {
+    width: calc(var(--project-width) * 2);
+    height: calc(var(--project-height) * 2);
+  }
+  .profile-pic {
+    width: calc(var(--profile-width) * 2);
+    height: calc(var(--profile-height) * 2);
+  }
+  .profile {
+    width: calc(var(--profile-width) * 2);
+    height: calc(var(--profile-height) * 2);
+    margin: calc(var(--profile-margin) * 2);
+  }
+}
+
+.social-link {
+  padding: 10px;
+}
+.social-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.social-logo-inline {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+/* Hide the social nav on mobile*/
+#right-nav {
+  visibility: hidden;
+}
+
+/* On mobile display the projects vertically*/
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* On mobile display the profiles vertically*/
+.profiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
